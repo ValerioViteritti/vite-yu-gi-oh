@@ -40,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader message="Yu-Gi-Oh" />
+  <AppHeader message="Yu-Gi-Oh Api" />
   <main>
     <label for="archetype"></label>
     <select id="country" name="country">

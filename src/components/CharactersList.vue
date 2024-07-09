@@ -39,10 +39,12 @@ export default {
 
 .container{
     
-
     .row{
         background-color: rgb(255, 255, 255);
-        margin-top: 20px;
+        margin-top: 40px;
+        
+        
+        
 
         div.col-6{
             margin-top: 20px;
