@@ -1,0 +1,12 @@
+// inclusione di partial variables
+
+@use './partials/variables' as *;
+
+// inclusione bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// inclusione font relativo
+
+// Supports weights 100-900
+@import 'node_modules/@fontsource/montserrat/index.css';
+@import 'node_modules/@fontsource/montserrat/700.css';
