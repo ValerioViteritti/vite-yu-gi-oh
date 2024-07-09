@@ -21,10 +21,16 @@ export default {
 @use '../style/partials/variables' as *;
 
 .character{
+    background-color: $primary;
+    height: 600px;
 
     img{
 
         height: 400px;
+    }
+
+    h4{
+        margin-top: 20px;
     }
 }
 </style>

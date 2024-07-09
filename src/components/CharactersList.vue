@@ -35,11 +35,17 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use '../style/partials/variables' as *;
+
 .container{
+    
 
     .row{
+        background-color: rgb(255, 255, 255);
+        margin-top: 20px;
 
         div.col-6{
+            margin-top: 20px;
             width: 20%;        
             height: 600px;
         }

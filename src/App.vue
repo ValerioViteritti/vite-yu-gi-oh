@@ -42,15 +42,39 @@ export default {
 <template>
   <AppHeader message="Yu-Gi-Oh" />
   <main>
+    <label for="archetype"></label>
+    <select id="country" name="country">
+      <option value="australia">Alien</option>
+      <option value="canada">Infernoble Arms</option>
+      <option value="usa">Noble Knight</option>
+      <option value="usa">Melodious</option>
+      <option value="usa">Archfiend</option>
+    </select>
+
     <CharactersList />
   </main>
 
 </template>
 
 <style lang="scss">
-@use './style/general.scss';
+@use './style/general.scss' as *;
+@use './style/partials/variables' as *;
+
 
 main {
   padding-top: 20px;
+  background-color: $primary;
+  position: relative;
+
+  select{
+
+    position: absolute;
+    top: 0.5%;
+    left: 16%;
+    border-radius: 5px;
+    padding: 5px;
+    
+
+  }
 }
 </style>
