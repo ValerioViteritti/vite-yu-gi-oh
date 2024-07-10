@@ -19,9 +19,11 @@ export default {
 header{
     height: 60px;
     margin-left: 0;
+    
 
     img{
-        width: 60px;
+        width: 100px;
+        margin-bottom: 10px;
     }
 
     span{
