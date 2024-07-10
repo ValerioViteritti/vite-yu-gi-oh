@@ -23,6 +23,7 @@ export default {
 
 <template>
     <section class="container">
+    
         <div>
             <!-- Componente che mostra il numero di risultati trovati -->
             <ResultsMessage />
@@ -33,6 +34,7 @@ export default {
                 <!-- Componente che mostra le informazioni di un singolo personaggio -->
                 <SingleCharacter :info="character" />
             </div>
+            
         </div>
         
         <!-- Componente AppLoader che può essere usato per mostrare un caricamento, commentato per ora -->

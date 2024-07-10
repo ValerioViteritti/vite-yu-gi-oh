@@ -12,7 +12,7 @@ export default {
         apiURL: "https://db.ygoprodeck.com/api/v7/archetypes.php", // URL dell'API per ottenere gli archetipi
       }
     }
-  },
+  },    
   created() {
     // Metodo del ciclo di vita di Vue.js chiamato quando il componente viene creato
     // Chiama il metodo fetchArchetypes per riempire l'archetypeArray
@@ -37,6 +37,7 @@ export default {
 </script>
 
 <template>
+    
   <div>
     <!-- Dropdown per selezionare un archetipo -->
     <select id="archetype" name="archetype" v-model="store.searchSelect" @change="$emit('searchSelect')">
