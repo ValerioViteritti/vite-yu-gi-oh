@@ -26,9 +26,13 @@ export default {
       let endPoint = store.apiURl;
 
       // Se si avvia una ricerca da AppSearch aggiungiamo la query di richiesta
-      if(store.searchText !== ''){
-        endPoint += `&archetype=${store.searchText}`;
+      // if(store.searchText !== ''){
+      //   endPoint += `&archetype=${store.searchText}`;
 
+      // }
+
+      if(store.searchSelect !== '') {
+        endPoint += `&archetype=${store.searchSelect}`;
       }
       axios.
         get(endPoint)
@@ -54,17 +58,10 @@ export default {
 <template>
   <AppHeader message="Yu-Gi-Oh Api" />
   <main>
-    <AppSearch @search="getCharacters"/>
+    <AppSearch @search="getCharacters()" @searchSelect="getCharacters()"/>
 
 
-    <!-- <label for="archetype"></label>
-    <select id="country" name="country">
-      <option value="australia">Alien</option>
-      <option value="canada">Infernoble Arms</option>
-      <option value="usa">Noble Knight</option>
-      <option value="usa">Melodious</option>
-      <option value="usa">Archfiend</option>
-    </select> -->
+
 
     <CharactersList />
   </main>
