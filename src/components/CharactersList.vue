@@ -1,5 +1,6 @@
 <script>
 import SingleCharacter from './SingleCharacter.vue'
+import ResultsMessage from './ResultsMessage.vue'
 
 // import state management
 import { store } from '../store.js';
@@ -8,6 +9,7 @@ export default {
     name: 'CharactersList',
     components: {
         SingleCharacter,
+        ResultsMessage
     },
     data() {
         return {
@@ -22,14 +24,18 @@ export default {
 
 <template>
     <section class="container">
+        <div>
+            <ResultsMessage />
+        </div>
         <div class="row" v-if="!store.loading">
             <div v-for="character in store.CharactersList" :key="character.id" class="col-6 mb-5">
                 <SingleCharacter :info="character" />
             </div>
         </div>
+        
 
 
-        <AppLoader v-else label="Yu-Gi-Oh" />
+        <!-- <AppLoader v-else label="Yu-Gi-Oh" /> -->
     </section>
 
 </template>
@@ -49,7 +55,7 @@ export default {
         div.col-6{
             margin-top: 20px;
             width: 20%;        
-            height: 600px;
+            height: 500px;
         }
     }
 }

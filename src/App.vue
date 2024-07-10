@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import AppHeader from './components/AppHeader.vue'
 import CharactersList from './components/CharactersList.vue'
-
+import AppSearch from './components/AppSearch.vue'
 // import state management
 import { store } from './store.js';
 
@@ -12,6 +12,7 @@ export default {
   name: "App",
   components: {
     AppHeader,
+    AppSearch,
     CharactersList
   },
   data() {
@@ -21,15 +22,26 @@ export default {
   },
   methods: {
     getCharacters() {
+      store.loading = true
+      let endPoint = store.apiURl;
+
+      // Se si avvia una ricerca da AppSearch aggiungiamo la query di richiesta
+      if(store.searchText !== ''){
+        endPoint += `&archetype=${store.searchText}`;
+
+      }
       axios.
-        get(store.apiURl)
+        get(endPoint)
         .then(res => {
           console.log(res.data.data);
           store.CharactersList = res.data.data;
           store.loading = false;
         })
         .catch(err => {
-          console.log(err);
+          console.log(err.message);
+          store.loading = false
+          // svuoto l'array
+          store.CharactersList = []
         })
     }
   },
@@ -42,14 +54,17 @@ export default {
 <template>
   <AppHeader message="Yu-Gi-Oh Api" />
   <main>
-    <label for="archetype"></label>
+    <AppSearch @search="getCharacters"/>
+
+
+    <!-- <label for="archetype"></label>
     <select id="country" name="country">
       <option value="australia">Alien</option>
       <option value="canada">Infernoble Arms</option>
       <option value="usa">Noble Knight</option>
       <option value="usa">Melodious</option>
       <option value="usa">Archfiend</option>
-    </select>
+    </select> -->
 
     <CharactersList />
   </main>

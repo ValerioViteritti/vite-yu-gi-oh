@@ -22,11 +22,11 @@ export default {
 
 .character{
     background-color: $primary;
-    height: 600px;
+    height: 550px;
 
     img{
 
-        height: 400px;
+        height: 350px;
     }
 
     h4{
